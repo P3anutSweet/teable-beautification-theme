@@ -1,0 +1,98 @@
+html:root{color-scheme:light;--ms-background:#EBE8E6;--ms-surface:#F4F2F0;--ms-text:#303236;--ms-text-muted:#5F5C64;--ms-accent:#627783;--ms-on-accent:#FFFFFF;--ms-border:#B1B5B7;--ms-input:#E5E3E0;--ms-glass:rgba(244,242,240,0.80);--ms-mesh-blue:rgba(154,174,184,0.30);--ms-mesh-warm:rgba(162,138,135,0.15);--ms-mesh-sage:rgba(149,154,143,0.20);}
+@media(prefers-color-scheme:dark){html:root:not([data-ms-theme]){color-scheme:dark;--ms-background:#303236;--ms-surface:#3D4146;--ms-text:#EBE8E6;--ms-text-muted:#CBD1D7;--ms-accent:#9AAEB8;--ms-on-accent:#303236;--ms-border:#6E7479;--ms-input:#35393E;--ms-glass:rgba(61,65,70,0.86);--ms-mesh-blue:rgba(154,174,184,0.15);--ms-mesh-warm:rgba(162,138,135,0.10);--ms-mesh-sage:rgba(149,154,143,0.12);}
+}
+html:root[data-ms-theme="light"]{color-scheme:light;--ms-background:#EBE8E6;--ms-surface:#F4F2F0;--ms-text:#303236;--ms-text-muted:#5F5C64;--ms-accent:#627783;--ms-on-accent:#FFFFFF;--ms-border:#B1B5B7;--ms-input:#E5E3E0;--ms-glass:rgba(244,242,240,0.80);--ms-mesh-blue:rgba(154,174,184,0.30);--ms-mesh-warm:rgba(162,138,135,0.15);--ms-mesh-sage:rgba(149,154,143,0.20);}
+html:root[data-ms-theme="dark"]{color-scheme:dark;--ms-background:#303236;--ms-surface:#3D4146;--ms-text:#EBE8E6;--ms-text-muted:#CBD1D7;--ms-accent:#9AAEB8;--ms-on-accent:#303236;--ms-border:#6E7479;--ms-input:#35393E;--ms-glass:rgba(61,65,70,0.86);--ms-mesh-blue:rgba(154,174,184,0.15);--ms-mesh-warm:rgba(162,138,135,0.10);--ms-mesh-sage:rgba(149,154,143,0.12);}
+/* Mist & Stone: shared material, without filtering product images. */
+:root,:root[data-theme]{
+ --bg:var(--ms-background);--fg:var(--ms-text);--muted:var(--ms-text-muted);--soft:var(--ms-text-muted);--accent:var(--ms-accent);--line:var(--ms-border);--tile:var(--ms-glass);
+ --band-bg:var(--ms-glass);--band-fg:var(--ms-text);--band-muted:var(--ms-text-muted);--band-line:var(--ms-border);--shadow:#30323620;
+ --g1a:#9AAEB8;--g1b:#CBD1D7;--g2a:#959A8F;--g2b:#DAD7C5;--g3a:#A28A87;--g3b:#C9C2BE;--g4a:#CBD1D7;--g4b:#9AAEB8;--g5a:#959A8F;--g5b:#CBD1D7;--g6a:#C9C2BE;--g6b:#DAD7C5;
+}
+html body{position:relative;isolation:isolate;background:var(--ms-background);color:var(--ms-text)}
+html body::before{content:"";position:fixed;inset:0;height:auto;z-index:-2;pointer-events:none;background:radial-gradient(ellipse at 0% 8%,var(--ms-mesh-blue),transparent 54%),radial-gradient(ellipse at 92% 24%,var(--ms-mesh-warm),transparent 51%),radial-gradient(ellipse at 40% 94%,var(--ms-mesh-sage),transparent 57%),var(--ms-background)}
+html body::after{content:"";position:fixed;inset:-8%;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 90% 27% at 20% 58%,transparent 50%,#ffffff18 51%,#ffffff05 60%,transparent 66%),radial-gradient(ellipse 95% 30% at 85% 62%,transparent 45%,#9AAEB816 46%,transparent 65%);transform:rotate(-12deg);animation:mist-wave 24s ease-in-out 1 both}
+@keyframes mist-wave{from{transform:translate3d(-2%,2%,0) rotate(-15deg)}to{transform:translate3d(1%,-1%,0) rotate(-9deg)}}
+html .glass,html .wcard,html .finding,html .card,html .diagram,html .tablewrap,html .item,html .qa,html .stat,html .loop,html .pad-target{
+ background:linear-gradient(135deg,#ffffff12,transparent),var(--ms-glass);border:1px solid var(--ms-border);border-top-color:color-mix(in srgb,var(--ms-border),white 40%);border-radius:18px;
+ box-shadow:inset 0 1px #ffffff35,inset 1px 0 #ffffff0d,0 16px 40px #20222612;
+ backdrop-filter:blur(16px) saturate(100%);-webkit-backdrop-filter:blur(16px) saturate(100%);
+}
+html .side,html .topbar,html .site-header,html .mobile-toc>nav,html .back-to-top{background:var(--ms-glass);color:var(--ms-text);border-color:var(--ms-border);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:inset 0 1px #ffffff30,0 12px 32px #20222612}
+html .side{gap:20px}html .side .nav-resources{margin-top:8px;padding-top:8px}html .side nav .catalog-link{margin-bottom:4px}
+html .band,html #contact,html .lineup{background:var(--ms-glass);border-color:var(--ms-border)}
+html .hero .g,html .brand small{color:var(--ms-text-muted)}
+html .side nav .catalog-link,html .topbar>.catalog-link{background:transparent;color:var(--ms-accent);border-color:var(--ms-border)}
+.colleague-link{display:inline-flex;align-items:center;gap:8px;min-height:40px;color:var(--ms-accent);text-decoration:none;font-size:13px}
+.colleague-link:hover{text-decoration:underline;text-underline-offset:4px}
+html .topbar>.colleague-link{padding:8px 12px;border:1px solid var(--ms-border);border-radius:10px}
+html .site-header{gap:20px;flex-wrap:wrap}html .site-header nav{gap:12px 18px;flex-wrap:wrap;justify-content:flex-end}html .site-header .portfolio{padding:0;border:0}
+html .side .nav-resources .colleague-link span{font-family:var(--f-sans);color:inherit;font-size:12px}
+html .lang button[aria-pressed="true"],html .contact-primary,html .mobile-toc>summary,html .button.primary,html .filters .active{background:var(--ms-accent);color:var(--ms-on-accent);border-color:var(--ms-accent)}
+html .contact-primary:hover,html .button.primary:hover{background:var(--ms-accent);filter:brightness(1.08)}
+html .mobile-toc nav a,html .back-to-top{color:var(--ms-text)}html .mobile-toc nav a>span:last-child{color:var(--ms-text-muted)}
+html .mobile-toc nav a[aria-current],html .mobile-toc nav a:hover,html .back-to-top:hover{color:var(--ms-accent);background:var(--ms-surface)}
+html .mobile-toc .nav-resources{border-color:var(--ms-border)}
+:root .stage,:root[data-theme="dark"] .stage,:root:not([data-theme="light"]) .stage{background:var(--ms-glass);border-color:var(--ms-border);box-shadow:inset 0 1px #ffffff30,0 16px 40px #20222620}
+html .stage .glow{background:radial-gradient(closest-side,#9AAEB825,transparent)}html .mobile-flow li{background:var(--ms-glass)}
+html .wcard:hover,html .product-card:hover{transform:translateY(-2px);border-color:var(--ms-accent)}
+html a:focus-visible,html button:focus-visible,html summary:focus-visible,html input:focus-visible,html select:focus-visible{outline:3px solid var(--ms-accent);outline-offset:4px}
+html .hero-image img,html .product-image img,html .detail-image img,html .engineering-visual img{filter:none;opacity:1;mix-blend-mode:normal}
+/* Public catalog text and controls: both appearances have explicit paired colors. */
+html body p,html .variant-inner ul,html .catalog-claims,html .technical-lead{color:var(--ms-text-muted)}
+html .eyebrow,html .hero-notes,html .back,html .chinese,html .spec-scope,html .chapter-number,html .engineering-specs dt,html .signal-path span,html .technical-variant>summary>small,html .card-body .model-meta,html .card-body .series-models,html .engineering-metrics span,html .hero-caption .eyebrow,html .source-photo summary{color:var(--ms-text-muted)}
+html em,html .series-totals,html .revision-note strong,html .report-intervals strong,html .brand-symbol{color:var(--ms-accent)}
+html .engineering-specs dd,html .spec-scope strong,html .card-body .model-counts,html .engineering-metrics strong{color:var(--ms-text)}
+html .engineering-visual,html .detail-image{background:var(--ms-surface)}html .engineering-visual figcaption,html .detail-image figcaption{color:var(--ms-text-muted);border-color:var(--ms-border)}
+html .button,html .filters button,html .search input,html .article-section input{color:var(--ms-text);border-color:var(--ms-border);background:var(--ms-glass)}
+html .search input{background:transparent}html .search input::placeholder{color:var(--ms-text-muted)}html .button:hover{background:var(--ms-surface)}
+html .filters button.active{background:var(--ms-accent);color:var(--ms-on-accent)}
+html .revision-note{background:var(--ms-glass);border-color:var(--ms-accent)}
+html .engineering-nav,html .engineering-chapter,html .engineering-specs>div,html .engineering-metrics>div,html .signal-path,html .signal-path li,html .report-intervals>div,html .topic-group,html .series-editions,html .card-body .series-models,html footer{border-color:var(--ms-border)}
+.appearance-label{display:flex;align-items:center;gap:10px;color:var(--ms-text-muted);font:400 12px/1.4 system-ui,sans-serif;flex-wrap:wrap}
+.appearance-label select{min-height:40px;max-width:100%;border:1px solid var(--ms-border);border-radius:10px;padding:8px 28px 8px 10px;background:var(--ms-surface);color:var(--ms-text);font:inherit}
+.appearance-label option{background:var(--ms-surface);color:var(--ms-text)}
+.appearance-toolbar{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;max-width:calc(100vw - 32px);border:1px solid var(--ms-border);border-radius:14px;padding:8px 12px;background:var(--ms-surface);box-shadow:0 6px 24px #20222620}
+html .entry-screen,html .entry-screen[data-palette]{background:var(--ms-background);color:var(--ms-text)}html .entry-screen .entry-dot{background:var(--ms-accent)}html .entry-screen::before{background:radial-gradient(ellipse,var(--ms-mesh-blue),transparent 65%)}
+@media(max-width:760px){html body::after{animation:none}html .glass,html .wcard,html .finding,html .card,html .qa{backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}html .topbar>.catalog-link,html .topbar>.colleague-link{flex:1 1 180px;order:3;justify-content:center}html .site-header nav{justify-content:start}.site-header [data-appearance-control]{width:100%}html .topbar{gap:12px}html .topbar>[data-appearance-control]{order:4;flex:1 0 100%}}
+@media(prefers-reduced-motion:reduce){html body::after{animation:none}html .wcard:hover,html .product-card:hover{transform:none}}
+@media(prefers-reduced-transparency:reduce),(prefers-contrast:more){html .glass,html .wcard,html .finding,html .card,html .qa,html .side,html .topbar,html .site-header{background:var(--ms-surface);backdrop-filter:none;-webkit-backdrop-filter:none}}
+@supports not (backdrop-filter:blur(1px)){html .glass,html .wcard,html .finding,html .card,html .qa{background:var(--ms-surface)}}
+@media print{[data-appearance-control],.appearance-toolbar{display:none!important}html body{background:white;color:black}html body::before,html body::after{display:none}html .glass,html .wcard,html .card,html .qa{background:white;color:black;box-shadow:none;backdrop-filter:none}}
+
+/* Slow, transform-only ambient movement. Text and product pixels stay still. */
+html body::before{inset:-5%;background:radial-gradient(ellipse at 8% 18%,var(--ms-mesh-blue),transparent 58%),radial-gradient(ellipse at 85% 28%,var(--ms-mesh-warm),transparent 54%),radial-gradient(ellipse at 42% 85%,var(--ms-mesh-sage),transparent 60%),var(--ms-background);animation:none;transform:translate3d(0,0,0)}
+html body::after{animation:none;opacity:.65;transform:rotate(-9deg)}
+html[data-motion="on"] body::before{animation:ambient-mesh 36s ease-in-out infinite alternate}
+html[data-motion="on"] body::after{animation:ambient-wave 45s ease-in-out infinite alternate}
+html[data-motion-paused="true"] body::before,html[data-motion-paused="true"] body::after{animation-play-state:paused}
+@keyframes ambient-mesh{0%{transform:translate3d(-1.5%,-1%,0) scale(1.02)}50%{transform:translate3d(1.5%,1%,0) scale(1.04)}100%{transform:translate3d(-.5%,2%,0) scale(1.02)}}
+@keyframes ambient-wave{from{transform:translate3d(-2%,1%,0) rotate(-12deg)}to{transform:translate3d(2%,-1%,0) rotate(-6deg)}}
+[data-appearance-control]{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px}
+.side [data-appearance-control]{flex-direction:column;align-items:flex-start;gap:8px}
+.motion-label{display:inline-flex;align-items:center;gap:8px;min-height:32px;font:400 11px/1.4 system-ui,sans-serif;color:var(--ms-text-muted);cursor:pointer}
+.motion-label input{accent-color:var(--ms-accent);width:15px;height:15px;flex-shrink:0}.motion-label:has(input:disabled){cursor:default}
+/* Studio surfaces use the same palette; transparent assets have no rectangular matte. */
+html .wtile,html .stage-art,html .contact-products figure,html .hero-image,html .card-image,html .detail-image{background:radial-gradient(ellipse at 18% 12%,var(--ms-mesh-blue),transparent 64%),radial-gradient(ellipse at 88% 78%,var(--ms-mesh-warm),transparent 62%),var(--ms-surface)}
+html .wtile,html .stage-art{overflow:hidden}
+html img[src*="studio-mist-"]{filter:none;mix-blend-mode:normal;opacity:1;object-fit:contain}
+html .wtile:has(img[src*="studio-mist-"]){padding:16px}
+html .stage-art:has(img[src*="studio-mist-"]){padding:24px}
+html .hero-image:has(img[src*="studio-mist-"]),html .card-image:has(img[src*="studio-mist-"]){padding:14px}
+html .contact-products figure{border:1px solid var(--ms-border);border-radius:16px;padding:12px;margin:0}
+html .contact-products img[src*="studio-mist-"]{height:auto;max-height:280px;aspect-ratio:3/2;background:transparent}
+@media(max-width:760px){html[data-motion="on"] body::before{animation-name:ambient-mobile;animation-duration:48s}html[data-motion="on"] body::after{animation:none;opacity:.4}.motion-label{min-height:36px}@keyframes ambient-mobile{from{transform:translate3d(-.5%,0,0)}to{transform:translate3d(.5%,1%,0)}}}
+@media(prefers-reduced-motion:reduce){html body::before,html body::after{animation:none!important;transform:none!important}}
+@media print{.motion-label{display:none}}
+/* Stronger ambient color, lighter glass; keep text and controls legible. */
+html:root{--ms-glass:rgba(244,242,240,.60);--ms-mesh-blue:rgba(133,164,181,.52);--ms-mesh-warm:rgba(162,138,135,.32);--ms-mesh-sage:rgba(149,164,143,.38)}
+html:root[data-ms-theme="dark"]{--ms-glass:rgba(61,65,70,.62);--ms-mesh-blue:rgba(133,164,181,.32);--ms-mesh-warm:rgba(162,138,135,.24);--ms-mesh-sage:rgba(149,164,143,.26)}
+html body::after{opacity:.9}
+html .wtile,html .stage-art,html .hero-image,html .card-image,html .product-image,html .detail-image,html .engineering-visual{background:radial-gradient(ellipse at 12% 15%,var(--ms-mesh-blue),transparent 66%),radial-gradient(ellipse at 88% 85%,var(--ms-mesh-warm),transparent 65%),var(--ms-glass)}
+/* Fade only the outermost margins; leave the subject and diagrams untouched. */
+html :is(.wtile,.stage-art,.hero-image,.card-image) img:not([src*="studio-mist-"]){mask-image:linear-gradient(to right,transparent,#000 4%,#000 96%,transparent),linear-gradient(to bottom,transparent,#000 4%,#000 96%,transparent);mask-composite:intersect}
+html .wtile img{object-fit:contain!important;transform:none!important}
+html .wtile:has(img[src*="catalog"]),html .wtile:has(img[src*="website"]){padding:20px}
+html #website img{width:100%;height:auto;max-height:none;object-fit:contain;transform:none}
+@media(prefers-reduced-transparency:reduce),(prefers-contrast:more){html:root{--ms-glass:var(--ms-surface)}}
+
