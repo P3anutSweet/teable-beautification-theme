@@ -1,6 +1,8 @@
-# Mist & Stone skin
+# Teable Beautification — Mist & Stone Theme
 
-Low-saturation light/dark glass styling for static product sites, custom Teable dashboards, and Authentik sign-in.
+A Teable beautification skin for custom dashboards: muted liquid glass, light and dark themes, animated mesh backgrounds, and matching Authentik sign-in styling.
+
+Teable 美化主题 / 皮肤：低饱和度配色、毛玻璃、深浅色切换与动态渐变背景。适用于自定义 Teable 仪表盘；并非覆盖所有原生 Teable 页面的一键插件。
 
 ## Contents
 
