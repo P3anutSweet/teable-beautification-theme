@@ -12,6 +12,23 @@ Teable 美化主题 / 皮肤：低饱和度配色、毛玻璃、深浅色切换�
 - `authentik.css`: Authentik branding CSS adapter.
 - `tokens.json`: source palette and semantic roles.
 
+## Quick start
+
+```html
+<head>
+  <!-- after the application's own styles -->
+  <link rel="stylesheet" href="mist-stone.css">
+  <link rel="stylesheet" href="dashboard.css">   <!-- custom Teable dashboards -->
+  <script src="appearance.js"></script>
+</head>
+<body>
+  <div data-appearance-control></div>            <!-- Light / Dark / System switch -->
+  ...
+</body>
+```
+
+For Authentik, paste `authentik.css` into the brand's custom CSS (System → Brands). `tokens.json` holds the palette if you want to reuse it elsewhere.
+
 Load the stylesheet after application styles. Load appearance.js in the head; add a `data-appearance-control` container where controls should appear. Without a container, the script adds a standalone toolbar after page load.
 
 Motion respects reduced-motion settings and pauses while the document is hidden. Reduced-transparency and high-contrast preferences use solid panels. Product illustrations and technical diagrams should retain original color information.
@@ -21,3 +38,7 @@ The dashboard adapter targets custom dashboard markup, not every native Teable s
 Before deployment, back up current styles and test both themes at desktop and mobile widths. This package contains no server addresses, deployment credentials, business data, or product image files.
 
 Current limitations: docking/undocking product animation is not included; it requires separate physically aligned product and dock/case assets. Native Teable grid theming needs a separate version-specific adapter.
+
+## License
+
+GPL-3.0. See [LICENSE](LICENSE).
